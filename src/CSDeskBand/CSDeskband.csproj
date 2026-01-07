@@ -17,7 +17,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;DESKBAND_WINFORMS DESKBAND_WPF</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;DESKBAND_WINFORMS;DESKBAND_WPF;DESKBAND_AVALONIA</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
@@ -87,10 +87,16 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Avalonia" Version="11.0.0" />
+    <PackageReference Include="Avalonia.Skia" Version="11.0.0" />
+    <PackageReference Include="Avalonia.Win32" Version="11.0.0" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="CSDeskBandImpl.cs" />
     <Compile Include="ContextMenu\DeskBandMenuItem.cs" />
     <Compile Include="CSDeskBandRegistrationAttribute.cs" />
     <Compile Include="CSDeskBandOptions.cs" />
+    <Compile Include="CSDeskBandAvalonia.cs" />
     <Compile Include="CSDeskBandWin.cs" />
     <Compile Include="CSDeskBandWpf.cs" />
     <Compile Include="ICSDeskBand.cs" />
