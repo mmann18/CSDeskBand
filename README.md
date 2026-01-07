@@ -15,6 +15,7 @@ _Images taken from the sample projects_
   - [Library Installation](#installation)
   - [Winforms deskband](#winforms)
   - [Wpf deskband](#wpf)
+  - [Avalonia deskband](#avalonia)
 - [Notes](#notes)
 - [Deskband installation](#deskband-installation)
 - [Examples](#examples)
@@ -113,6 +114,31 @@ public partial class UserControl1 : CSDeskBandWin
             }
         }
     }
+```
+
+### Avalonia
+- Add the compilation symbol `DESKBAND_AVALONIA` to your Avalonia project.
+- Reference `Avalonia`, `Avalonia.Win32`, and `Avalonia.Skia` packages (Avalonia 11+).
+- Create a new **public** class that will host your deskband and make it inherit from the abstract class `CSDeskBandAvalonia`. Namespace in `CSDeskBand`
+  - Implement the `Control` property to return your main Avalonia control.
+- Add `[ComVisible(true)]`, `[Guid("xx-xx-xx-xx-xx")]`, `[CSDeskBandRegistration()]` attributes to the class.
+
+```cs
+using Avalonia.Controls;
+using CSDeskBand;
+
+[ComVisible(true)]
+[Guid("D8ADFD4B-11D6-4D2C-9D97-77AB2C4EBA32")]
+[CSDeskBandRegistration(Name = "Sample Avalonia")]
+public class Deskband : CSDeskBandAvalonia
+{
+    public Deskband()
+    {
+        Options.MinHorizontalSize = new DeskBandSize(120, 30);
+    }
+
+    protected override Control Control => new TextBlock { Text = "Hello Avalonia" };
+}
 ```
 
 ### Both
