@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <DefineConstants>DESKBAND_AVALONIA</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="11.0.0" />
+    <PackageReference Include="Avalonia.Desktop" Version="11.0.0" />
+    <PackageReference Include="Avalonia.Skia" Version="11.0.0" />
+    <PackageReference Include="Avalonia.Win32" Version="11.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\output\CSDeskBand.cs">
+      <Link>CSDeskBand.cs</Link>
+    </Compile>
+  </ItemGroup>
+</Project>
